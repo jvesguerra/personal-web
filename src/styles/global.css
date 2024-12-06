@@ -1,0 +1,181 @@
+/* ============================= */
+/* 1. CSS RESET (Modern Version) */
+/* ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Base font size for responsive scaling */
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Use a modern font */
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  -webkit-font-smoothing: antialiased; /* Improve text rendering */
+}
+
+/* ============================= */
+/* 2. CSS VARIABLES              */
+/* ============================= */
+:root {
+  /* Colors */
+  --primary-color: #007BFF;
+  --secondary-color: #6C757D;
+  --bg-color: #F8F9FA;
+  --text-color: #212529;
+  --link-color: #007BFF;
+  --link-hover-color: #0056b3;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Typography */
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --heading-font-weight: 700;
+  --text-font-weight: 400;
+}
+
+/* ============================= */
+/* 3. GENERAL LAYOUT STYLES      */
+/* ============================= */
+body, html {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ============================= */
+/* 4. TYPOGRAPHY                 */
+/* ============================= */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--heading-font-weight);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-md);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* ============================= */
+/* 5. NAVIGATION STYLES          */
+/* ============================= */
+nav {
+  background-color: var(--primary-color);
+  padding: var(--spacing-lg) var(--spacing-lg);
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+
+nav ul li {
+  font-size: var(--font-size-lg);
+  padding: 0 var(--spacing-xl);
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: var(--heading-font-weight);
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+/* ============================= */
+/* 6. BUTTON STYLES              */
+/* ============================= */
+button {
+  font-size: var(--font-size-md);
+  padding: var(--spacing-md) var(--spacing-md);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--link-hover-color);
+}
+
+button:disabled {
+  background-color: var(--secondary-color);
+  cursor: not-allowed;
+}
+
+/* ============================= */
+/* 7. RESPONSIVE DESIGN          */
+/* ============================= */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}
